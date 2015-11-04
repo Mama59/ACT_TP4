@@ -1,0 +1,42 @@
+1
+//	créer certificat (quelque chose qui permet d'encoder toutes les solutions valides)
+//	la taille de c prop à la taille de l'entrée
+//	Vérfie le certificat par rapport au problème
+//	L'algo est polynomial par rapport à la taille des entrées
+
+Le certificat est une liste de ville de taille n
+
+
+on vérifie que un parcours passe une et une seule fois par ville
+et que la somme des distance <= l
+
+Algo 
+	-On vérifie qu'il n'y a pas de doublons sinon faux   O(n)
+	-on fais la somme des distances entre l'élément et le suivant + Distance entre le dernier et le premier O(n)
+	-vrai si la somme des distances <= l O(1)
+	
+	on est en O(n)
+	donc au plus NP Non déterministe polynomial
+	
+2
+	on fait une boucle, de 0 à n -1
+		on ajoute a la liste alea(n);
+		
+	on retourne la liste
+
+Chaque ville est calculée de manière aléatoire sans rapport avec les tirages précedent
+on a donc une équiprobabilité dans les certificats créer
+
+3.1
+	Le certificat peu prendre  n^n valeurs
+
+3.2
+	Par ordre alphabétique
+
+3.3
+	Générer tout les certificats 
+	les tester un par un, jusqu'a ce qu'il y en ai un de bon ou jusqu'à ce qu'on les ai tous tester
+
+
+ 
+ 

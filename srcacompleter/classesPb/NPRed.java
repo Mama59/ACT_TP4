@@ -8,7 +8,6 @@ abstract public class NPRed extends NP{
 	
 	public boolean estCorrect(Certificat cert) {
 		//A COMPLETER
-		
 		return true;
 	}
 

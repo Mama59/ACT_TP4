@@ -1,10 +1,7 @@
 package travellingSalemansProblem;
 
-import java.util.Random;
 import java.util.Scanner;
-import java.io.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import classesPb.*;
 
@@ -19,6 +16,11 @@ public class CertificatTSP implements Certificat{
 		this.tsp = tsp;
 		this.liste = new ArrayList<Character>(tsp.nbVilles);
 		this.lstSaisie = new ArrayList<Character>(tsp.nbVilles);
+		
+		this.valeursPossibles = new ArrayList<Character>(); 
+		for (int i = 0; i < this.tsp.nbVilles ; i++) {
+			this.valeursPossibles.add((char) ('A' + i));
+		}
 	}
 	
 	@Override
@@ -39,6 +41,7 @@ public class CertificatTSP implements Certificat{
 				this.valeursPossibles.add(f);
 			}
 		});
+		this.valeursPossibles.sort(null);
 	}
 	
 	@Override
@@ -48,21 +51,22 @@ public class CertificatTSP implements Certificat{
 	
 	@Override
 	public void alea() {
+		System.out.println("Certificat aleatoire");
 		List<Character> newCertif = new ArrayList<Character>();
-		this.liste.forEach(f -> newCertif.add(this.valeursPossibles.get((int) (Math.random() * this.valeursPossibles.size()))));	
+		for (int i = 0; i < this.tsp.nbVilles ; i++) {
+			newCertif.add(this.valeursPossibles.get((int) (Math.random() * this.valeursPossibles.size())));
+		}
 		this.liste = newCertif;		
 	}
 	@Override
-	// reset = premiere valeur saisie ou premiere valeur possible ?
 	public void reset() {
-		// TODO Auto-generated method stub
+		System.out.println("Certificat reset");
 		for (int i = 0; i < this.liste.size(); i++) {
 			this.liste.set(i, this.lstSaisie.get(i));
 		}
 	}
 	@Override
 	public boolean estDernier() {
-		System.out.println(this.valeursPossibles.size());
 		for (int i = 0; i < this.liste.size(); i++) {
 			if (this.liste.get(i) != this.valeursPossibles.get(this.valeursPossibles.size() - 1)) {
 				return false;
@@ -72,6 +76,7 @@ public class CertificatTSP implements Certificat{
 	}
 	@Override
 	public void suivant() {
+		System.out.println("Certificat suivant");
 		if (this.estDernier()) {
 			return;
 		}
@@ -106,4 +111,22 @@ public class CertificatTSP implements Certificat{
 		return false;
 	}
 
+	public List<Character> getList() {
+		return this.liste;
+	}
+	
+	public List<Character> getValeursPossibles() {
+		return this.valeursPossibles;
+	}
+	
+	@Override
+	public void resetFirst() {
+		System.out.println("Certificat reset to first possible value");
+		List<Character> newCertif = new ArrayList<Character>();
+		for (int i = 0; i < this.liste.size(); i++) {
+			newCertif.add(this.valeursPossibles.get(i));
+		}
+		System.out.println("Certificat aleatoire");
+		this.liste = newCertif;	
+	}
 }

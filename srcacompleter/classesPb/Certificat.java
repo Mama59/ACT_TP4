@@ -1,5 +1,7 @@
 package classesPb;
 
+import java.util.List;
+
 public interface Certificat {
 
 	//saisie au clavier de la valeur du certificat
@@ -10,7 +12,7 @@ public interface Certificat {
 	
 	//modification aleatoire de la valeur du certificat
 	//chaque valeur possible doit pouvoir etre generee
-	public  void alea();
+	public void alea();
 	
 	//on munira les valeurs possibles du certificat d'un ordre total
 
@@ -23,4 +25,10 @@ public interface Certificat {
 	//modifie la valeur du certificat en la suivante pour l'ordre
 	//comportement non defini si la certificat est le dernier
 	public void suivant();
+	
+	public boolean haveDoublons();
+	
+	public List<Character> getList();
+	public List<Character> getValeursPossibles();
+	public void resetFirst(); 
 }

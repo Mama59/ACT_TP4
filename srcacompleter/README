@@ -73,16 +73,12 @@ on a donc une équiprobabilité dans les certificats créer
 8 
 	Si TSP était P, 
 		si TSPOpt1 fait une boucle d'appel en recherchant par dichotomie la longeur minimale à TSP
-			TSPOpt1 serait donc P
+			TSPOpt1 serait donc P  car nbr d'appel en n log n
 		sinon 
 			si la boucle n'est pas de taille polynomiale dans ce cas la il serait NP
 	
 9
-	
-	Plus dur... Montrer que si la propriété TSP était P, TSPOpt2 le serait aussi.
-
-
-
-
- 
- 
+	Si TSP est P alors TSPOpt1 l'est aussi ce qui implique que TSPOpt1 est déterministe polynomiale en n.
+		Et si TSPOpt1 est polynomiale en n alors TSPOpt2 l'est aussi.
+		De ce fait TSPOpt2 est P.
+	 

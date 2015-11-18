@@ -19,23 +19,48 @@ public static void main(String[] arg) throws Exception {
     for (int i=0; i<4; i++) donnee.nextLine();
     int D[][]=new int[nbv][nbv];
     for (int i=0; i<nbv; i++){
-       for (int j=0; j<nbv; j++) {D[i][j]= donnee.nextInt();System.out.println(D[i][j]+" ");}
+       for (int j=0; j<nbv; j++) {D[i][j]= donnee.nextInt();System.out.print(D[i][j]+" ");}
        System.out.println();}
     TSP pb=new TSP(nbv,D,lg);
     System.out.println(arg[0]);
     // les differents modes
     if (arg[0].equals("-verif")) { 
     	CertificatTSP c= pb.cert();
-    	System.out.print("Proposez un certificat;");
+    	System.out.print("Proposez un certificat de " + nbv + " caracteres");
     	c.saisie();
+    	c.display();
+    	/*
+    	c.alea();
+    	c.display();
+    	c.reset();
+    	c.display();
+    	c.suivant();
+    	c.display();
+    	c.alea();
+    	c.display();
+    	c.reset();
+    	c.display();
+    	c.suivant();
+    	c.display();
+    	c.alea();
+    	c.display();
+    	c.reset();
+    	c.display();
+    	c.alea();
+    	c.display();
+    	c.suivant();
+    	c.display();
+    	*/
     	System.out.print("votre certificat est-il correct? ");
     	System.out.println(pb.estCorrect(c));
     	}
     else if (arg[0].equals("-nondet")) {
+    	CertificatTSP c = pb.cert();
         System.out.println(pb.aUneSolutionNonDeterministe());
         }
     else if (arg[0].equals("-exhaust"))  { 
-    	System.out.println("le probleme a-t-il une solution?: ");System.out.println(pb.aUneSolution());
+    	System.out.println("le probleme a-t-il une solution?: ");
+    	System.out.println(pb.aUneSolution());
     	}
     else
     	System.out.println("erreur de mode");

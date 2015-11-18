@@ -1,5 +1,8 @@
 package classesPb;
 
+import travellingSalemansProblem.CertificatTSP;
+import travellingSalemansProblem.TSP;
+
 public abstract class NP extends ExpTime{
     
 //on doit pouvoir definir pour le pb la notion de  certificat 
@@ -14,8 +17,17 @@ public abstract class NP extends ExpTime{
 //algo exponentiel de decision de la propriete basee sur l'enumeration
 // NP est inclus dans EXPTime	
 	public boolean aUneSolution() {
-		// ACOMPLETER
-		return true;
+		Certificat c = new CertificatTSP((TSP) this);
+		c.alea();
+		c.resetFirst();
+		while (!c.estDernier()) {
+			if (this.estCorrect(c)) {
+				System.out.println(c.getList());
+				return true;
+			}
+			c.suivant();
+		}
+		return false;
     }
 
 	
@@ -24,7 +36,11 @@ public abstract class NP extends ExpTime{
 //si il n'en existe pas TOUTES les executions retournent faux!
 	public boolean aUneSolutionNonDeterministe() {
      	 //ACOMPLETER
-		return true;
+		Certificat c = new CertificatTSP((TSP) this);
+		c.alea();
+		System.out.println(c.getValeursPossibles());
+		System.out.println(c.getList());
+		return this.estCorrect(c);
     }
 }
  

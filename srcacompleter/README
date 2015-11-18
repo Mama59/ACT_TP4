@@ -56,6 +56,33 @@ on a donc une équiprobabilité dans les certificats créer
 5.1
 	On ajoute un sommet qui est relié a tout les autres sommets			
 
+5.3
+	HamiltonPath ce réduit dans HamiltonCycle qui lui même ce réduit dans TSP
+	Donc HamiltonPath ce réduit dans TSP
+	
+7
+	TSPOpt1 appele en bloucle la propriété TSP
+	Réduire TSP dans TSPOpt1
+	n -> n
+	D -> D
+	l n'est pas utilisé
+	si TSPOpt1 était P alors forcement la propriété TSP serait P
+	 
+	 TSPOpt1 est donc np dur
+	 
+8 
+	Si TSP était P, 
+		si TSPOpt1 fait une boucle d'appel en recherchant par dichotomie la longeur minimale à TSP
+			TSPOpt1 serait donc P
+		sinon 
+			si la boucle n'est pas de taille polynomiale dans ce cas la il serait NP
+	
+9
+	
+	Plus dur... Montrer que si la propriété TSP était P, TSPOpt2 le serait aussi.
+
+
+
 
  
  

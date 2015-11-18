@@ -38,5 +38,19 @@ on a donc une équiprobabilité dans les certificats créer
 	les tester un par un, jusqu'a ce qu'il y en ai un de bon ou jusqu'à ce qu'on les ai tous tester
 
 
+4.1
+	Le cycle hamiltonien ce réduit polynomilement dans TSP
+		Cycle Hamiltonien
+			n -> nbr de sommets
+			D matrice de booleen (n,n) représentant les arêtes
+		Vers Tsp
+			n nbr de ville = nbr de sommets
+			D matrice des distances (n,n) = si dans la matrice de hamilton on a 0 on met n + 1 sinon on met 1
+			l longueur maxi autorisée = n (on passe une fois par chaque sommets)
+
+
+			
+			
+
  
  

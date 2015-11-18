@@ -28,7 +28,7 @@ public class CertificatTSP implements Certificat{
 		Scanner sc = new Scanner(System.in);
 		String saisie = sc.nextLine();
 		while (saisie.length() != this.tsp.nbVilles) {
-			System.out.println("Vous devez entrer exactement " + this.tsp.nbVilles + " caractères");
+			System.out.println("Vous devez entrer exactement " + this.tsp.nbVilles + " caractï¿½res");
 			saisie = sc.nextLine();
 		}
 		for (int i = 0; i < saisie.length(); i++) {
@@ -76,23 +76,23 @@ public class CertificatTSP implements Certificat{
 	}
 	@Override
 	public void suivant() {
-		System.out.println("Certificat suivant");
+		//System.out.println("Certificat suivant");
 		if (this.estDernier()) {
 			return;
 		}
 		
 		boolean exit = false;
-		// on parcourt la liste en commençant par le dernier caract
+		// on parcourt la liste en commenï¿½ant par le dernier caract
 		for (int i = this.liste.size() - 1; i >= 0; i--) {
 			if (exit) {
 				return;
 			}
-			// si pas le caract max, on ncrémente le caract
+			// si pas le caract max, on ncrï¿½mente le caract
 			if (this.liste.get(i) != this.valeursPossibles.get(this.valeursPossibles.size() - 1)) {
 				this.liste.set(i, this.valeursPossibles.get(this.valeursPossibles.indexOf(this.liste.get(i)) + 1));
 				exit = true;
 			}
-			// sinon, c'ets le dernier caract possible, on insère le premier et passe à la ville precédente
+			// sinon, c'ets le dernier caract possible, on insï¿½re le premier et passe ï¿½ la ville precï¿½dente
 			else {
 				this.liste.set(i, this.valeursPossibles.get(0));
 			}

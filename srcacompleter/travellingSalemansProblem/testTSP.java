@@ -1,5 +1,5 @@
 package travellingSalemansProblem;
-import java.io.*;
+import java.io.FileReader;
 import java.util.Scanner;
 
 

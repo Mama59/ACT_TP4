@@ -1,9 +1,9 @@
 package travellingSalemansProblem;
 
-import java.util.Comparator;
 import java.util.List;
 
-import classesPb.*;
+import classesPb.Certificat;
+import classesPb.NP;
 
 public class TSP extends NP {
 	public int nbVilles;
@@ -39,7 +39,7 @@ public class TSP extends NP {
 		}
 		// retour case depart
 		longueur += distances[villesTriees.indexOf(parcours.get(parcours.size() - 1))][villesTriees.indexOf(parcours.get(0))];
-		System.out.println("Longueur tournee : " + longueur);
+		//System.out.println("Longueur tournee : " + longueur);
 		return longueur <= this.longueurTournee;
 	}
 }

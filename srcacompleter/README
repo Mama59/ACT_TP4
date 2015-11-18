@@ -48,7 +48,6 @@ on a donc une équiprobabilité dans les certificats créer
 			D matrice des distances (n,n) = si dans la matrice de hamilton on a 0 on met n + 1 sinon on met 1
 			l longueur maxi autorisée = n (on passe une fois par chaque sommets)
 
-
 			
 			
 
